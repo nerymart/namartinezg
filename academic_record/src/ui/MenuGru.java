@@ -1,0 +1,94 @@
+package ui;
+
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+import dal.Archivos;
+import dol.Asignatura;
+
+public class MenuGru {
+	public static Scanner o = new Scanner (System.in);
+	public static  FileReader r;
+	
+	public static ArrayList <Asignatura> u = new ArrayList<Asignatura>();
+		public void showD () {
+			
+			
+			boolean salir = false;
+			int option=0;
+			
+			do {
+				choose ();
+				option = o.nextInt();
+				
+				switch (option) {
+				case 1:
+				open();
+					break;
+				case 2:
+					agregar();
+					break;
+				case 3:
+					save();
+					break;
+				case 4:
+					MenuPrincipal p = new MenuPrincipal();
+					p.showD();
+					break;
+				
+				
+				}
+				
+			}while(!salir);
+			
+			
+		}
+		public void choose() {
+			System.out.println("1: Abrir");
+			System.out.println("2: Agregar");
+			System.out.println("4: Guardar");
+			System.out.println("5: Volver al menu principal");
+			
+			
+		}
+		
+		public void agregar() {
+			insertDatos mo = new insertDatos();
+			u.add(mo.asignatura());
+			
+			
+		}
+		public void save() {
+
+			Archivos al = new Archivos();
+				
+			System.out.println("Por favor indica la ruta para guardar el archivo: ");
+			al.setFileEntry(o.next());
+			
+			System.out.println("Por favor indica el nombre del archivo: ");		
+			al.setFileName(o.next());
+			
+			al.getRejistro();
+			
+			al.saveList();
+		}
+		public FileReader open() {
+			System.out.println("Por favor indica la ruta del archivo a abrir: ");
+			String fileEntry = o.next();
+			
+			try {
+				r = new FileReader(fileEntry);
+			} catch (FileNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			return r;
+		}
+		
+
+
+
+
+}
