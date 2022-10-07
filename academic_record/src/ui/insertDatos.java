@@ -72,7 +72,7 @@ public class insertDatos {
 		l.setID(k.nextShort());
 		
 		System.out.println("Asigne nombre al grupo");
-		l.setnGrupo(k.nextLine());
+		l.setnGrupo(k.next());
 		
 		System.out.println("Seccion ( A - B ) ");
 		l.setSeccion(k.nextLine());
@@ -88,19 +88,19 @@ public class insertDatos {
 		j.setID(k.nextShort());
 		
 		System.out.println("Primer nombre ");
-		j.setPrimerNombre(k.nextLine());
+		j.setPrimerNombre(k.next());
 		
 		System.out.println("Segundo nombre ");
-		j.setSegundoNombre(k.nextLine());
+		j.setSegundoNombre(k.next());
 	
 		System.out.println("Primer apellido ");
-		j.setPrimerApellido(k.nextLine());
+		j.setPrimerApellido(k.next());
 		
 		System.out.println("Segundo apellido ");
-		j.setSegundoApellido(k.nextLine());
+		j.setSegundoApellido(k.next());
 		
 		System.out.println("Genero ");
-		j.setGenero(k.nextLine());
+		j.setGenero(k.next());
 		
 		System.out.println("Fecha de nacimiento");
 		j.setFechaNacimiento(null);
