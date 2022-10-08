@@ -17,8 +17,8 @@ public class MenuPrincipal implements Interfaz   {
 			
 			switch (option) {
 			case 1:
-				MenuAsig k = new MenuAsig ();
-				k.showD();
+				MenuEstu n = new MenuEstu();
+	             n.showD();
 				break;
 			case 2:
 				MenuGru j = new MenuGru();
@@ -29,8 +29,9 @@ public class MenuPrincipal implements Interfaz   {
 				h.showD();
 				break;
 			case 4:
-				MenuEstu n = new MenuEstu();
-			             n.showD();
+			
+			             MenuAsig k = new MenuAsig ();
+							k.showD();
 				break;
 			case 5:
 				salir = true;
@@ -45,7 +46,7 @@ public class MenuPrincipal implements Interfaz   {
 	}
 	
 	public void choose() {
-		System.out.println("1: Asignaturas");
+		System.out.println("1: Estudiante");
 		System.out.println("2: Grupos");
 		System.out.println("3: Profesores");
 		System.out.println("4: Estudiantes");

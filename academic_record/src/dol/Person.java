@@ -1,15 +1,27 @@
 package dol;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Person {
+
+import misc.Fecha1;
+
+public class Person  implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -9122642117007409380L;
+	/**
+	 * 
+	 */
+
 	private short ID;
 	private String primerNombre;
 	private String segundoNombre;
 	private String primerApellido;
 	private String segundoApellido;
 	private String genero;
-	private Date fechaNacimiento;
+	private Date birthDate;
 	private int edad;
 	
 	
@@ -28,7 +40,7 @@ public class Person {
 		this.primerApellido = primerApellido;
 		this.segundoApellido = segundoApellido;
 		this.genero = genero;
-		this.fechaNacimiento = fechaNacimiento;
+		this.birthDate = fechaNacimiento;
 		this.edad = edad;
 		
 	}
@@ -81,12 +93,12 @@ public class Person {
 		this.genero = genero;
 	}
 
-	public Date getFechaNacimiento() {
-		return fechaNacimiento;
+	public Date getBirthDate() {
+		return birthDate;
 	}
 
-	public void setFechaNacimiento(Date fechaNacimiento) {
-		this.fechaNacimiento = fechaNacimiento;
+	public void setBirthDate(Date birthDate) {
+		this.birthDate = birthDate;
 	}
 
 	public int getEdad() {
@@ -96,7 +108,9 @@ public class Person {
 	public void setEdad(int edad) {
 		this.edad = edad;
 	}
-
+	public int getAge() {
+		return Fecha1.getAge(birthDate);
+	}
 	
 	
 

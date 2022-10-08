@@ -68,7 +68,7 @@ public static ArrayList <Asignatura> u = new ArrayList<Asignatura>();
 
 		Archivos al = new Archivos();
 			
-		System.out.println("Por favor indica la ruta para guardar el archivo: ");
+		System.out.println("Ruta para guardar : ");
 		al.setFileEntry(o.next());
 		
 		System.out.println("Por favor indica el nombre del archivo: ");		
@@ -79,7 +79,7 @@ public static ArrayList <Asignatura> u = new ArrayList<Asignatura>();
 		al.saveList();
 	}
 	public FileReader open() {
-		System.out.println("Por favor indica la ruta del archivo a abrir: ");
+		System.out.println("Indique la ruta para abrir el archivo : ");
 		String fileEntry = o.next();
 		
 		try {

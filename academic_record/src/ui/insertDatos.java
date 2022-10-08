@@ -1,11 +1,15 @@
 package ui;
 
+import java.util.Date;
 import java.util.Scanner;
 
 import dol.Asignatura;
 import dol.Estudiantes;
 import dol.Grupo;
 import dol.Profesores;
+
+import misc.Fecha1;
+import misc.Fecha2;
 
 public class insertDatos {
 	public static Scanner k = new Scanner (System.in);
@@ -30,11 +34,10 @@ public class insertDatos {
 		Scanner d = new Scanner (System.in);
 			System.out.println("Ingrese ID");
 			i.setID(d.nextShort());
-			
 
-			System.out.println("Fecha de ingreso");
-			i.setFechaIngreso(d.nextShort());
-			
+			Date ingreso = Fecha2.catchValidDate(k, "Fecha de nacimiento (dd/MM/yyyy): ");
+			i.setBirthDate(ingreso);
+				
 			System.out.println("Primer nombre ");
 			i.setPrimerApellido(d.next());
 			
@@ -52,9 +55,9 @@ public class insertDatos {
 		System.out.println("Genero ");
 		i.setGenero(d.next());
 		
-		/*System.out.println("Fecha de nacimiento");
-		i.setFechaNacimiento(null);*/
-		
+		Date date = Fecha1.catchValidDate(k, "Fecha de nacimiento (dd/MM/yyyy): ");
+		i.setBirthDate(date);
+			
 		
 		
 		return i;
@@ -70,12 +73,11 @@ public class insertDatos {
 		
 		System.out.println("Digijte ID");
 		l.setID(k.nextShort());
-		
+		System.out.println("Seccion ( A - B ) ");
+		l.setSeccion(k.next());
 		System.out.println("Asigne nombre al grupo");
 		l.setnGrupo(k.next());
 		
-		System.out.println("Seccion ( A - B ) ");
-		l.setSeccion(k.nextLine());
 		return l;
 	}
 	
@@ -102,9 +104,7 @@ public class insertDatos {
 		System.out.println("Genero ");
 		j.setGenero(k.next());
 		
-		System.out.println("Fecha de nacimiento");
-		j.setFechaNacimiento(null);
-		
+			
 		System.out.println("Edad");
 	      j.setEdad(k.nextInt());
 		
